@@ -5,21 +5,21 @@ window.addEventListener('load', function(){
       response.json().then(function(json) {
 
          const missionTarget = document.getElementById("missionTarget");
-      //   let i = function getRandom(){
+      //   let json[i] = function getRandom(){
       //      return Math.random()
-      //   }
-         //let index = 0;
+        
+         let index = Math.floor(Math.random()*json.length)  ;
                
         missionTarget.innerHTML = `
         <h2>Mission Destination</h2>
         <ol>
-           <li>Name: ${json[2].name}</li>
-           <li>Diameter: ${json[2].diameter}</li>
-           <li>Star: ${json[2].star}</li>
-           <li>Distance from Earth: ${json[2].distance}</li>
-           <li>Number of Moons: ${json[2].moons}</li>
+           <li>Name: ${json[index].name}</li>
+           <li>Diameter: ${json[index].diameter}</li>
+           <li>Star: ${json[index].star}</li>
+           <li>Distance from Earth: ${json[index].distance}</li>
+           <li>Number of Moons: ${json[index].moons}</li>
         </ol>
-        <img src="${json[2].image}"></img>
+        <img src="${json[index].image}"></img>
         `
 
       })
